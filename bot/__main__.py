@@ -20,7 +20,8 @@ from bot import (
     audio_b,
     preset,
     codec,
-    watermark
+    name,
+    size
     
 
 )
@@ -49,6 +50,8 @@ codec.append("libx265")
 resolution.append("854x480")
 preset.append("veryfast")
 audio_b.append("40k")
+name.append("ANIME x UNIVERSE")
+size.append("15")
 # 🤣
 
 
@@ -123,7 +126,25 @@ if __name__ == "__main__" :
         else:
             await message.reply_text("<b>Admin Only</b> 💀")
 
-            
+    @app.on_message(filters.incoming & filters.command(["size", f"size@{BOT_USERNAME}"]))
+    async def changesi(app, message):
+        if message.from_user.id in AUTH_USERS:
+            si = message.text.split(" ", maxsplit=1)[1]
+            OUT = f"I will be using : {si} watermark size"
+            size.insert(0, f"{si}")
+            await message.reply_text(OUT)
+        else:
+            await message.reply_text("Error")
+
+    @app.on_message(filters.incoming & filters.command(["name", f"name@{BOT_USERNAME}"]))
+    async def changete(app, message):
+        if message.from_user.id in AUTH_USERS:
+            na = message.text.split(" ", maxsplit=1)[1]
+            OUT = f"I will be using : {na} watermark name"
+            name.insert(0, f"{na}")
+            await message.reply_text(OUT)
+        else:
+            await message.reply_text("Error")        
                
     @app.on_message(filters.incoming & filters.command(["preset", f"preset@{BOT_USERNAME}"]))
     async def changepr(app, message):
