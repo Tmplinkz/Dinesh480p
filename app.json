@@ -24,32 +24,32 @@
     },
     "TG_BOT_TOKEN": {
       "description": "Your bot token, as a string. Get this from @BotFather",
-      "value": "6654545841:AAHjObGon6CGLAZP8jKclNZydxXbHy0lhFs",
+      "value": "6696429339:AAHHIUb0tFIrfsEPdWIwuatq6GR6z6V8U1Q",
       "required": true
     },
     "APP_ID": {
       "description": "Get this value from https://my.telegram.org",
-      "value": "24330185",
+      "value": "22768681",
       "required": true
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org",
-      "value": "d024679a644eca8a88d10feaf4537d96",
+      "value": "07debb70a590c8b06f47a31a6761a28b",
       "required": true
     },
     "BOT_USERNAME": {
       "description": "Your Bot Username. Without `@` before Username!",
-      "value": "anime4ua480p_bot",
+      "value": "Upaxu_bot",
       "required": true
     },
     "LOG_CHANNEL": {
       "description": "Your Bot's Log Channel's Username. For Help ask in @linux_repo",
-      "value": "encoderloganime4u",
+      "value": "encoderlog1",
       "required": true
     },
     "AUTH_USERS": {
       "description": "Allow only pre-defined users to use this bot as Sudo User. Separate with Space. Just for using Admin Commands.",
-      "value": "5066042764 5090146108 -1002066372404",
+      "value": "5066042764 6345618689 5090146108 -1002066372404",
       "required": true
     }
   },
