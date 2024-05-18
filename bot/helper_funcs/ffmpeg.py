@@ -29,6 +29,7 @@ from bot import (
     preset,
     codec,
     name,
+    size,
     pid_list
 )
 
@@ -87,6 +88,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     preset.append("veryfast")
     audio_b.append("40k")
     name.append("ANIME x UNIVERSE")
+    size.append("15")
     file_genertor_command = (
     f"ffmpeg -hide_banner -loglevel quiet -progress '{progress}' -i '{video_file}' "
     f"-metadata 'title=Encoded by ANIME x UNIVERSE' -c:v {codec[0]} -map 0 -crf {crf[0]} -c:s copy "
