@@ -1,0 +1,15 @@
+services:
+  drone-vc-p:
+    build: .
+    environment:
+      APP_ID: $APP_ID
+      API_HASH: $API_HASH
+      BOT_USERNAME: $BOT_USERNAME
+      LOG_CHANNEL: $LOG_CHANNEL
+      AUTH_USERS: $AUTH_USERS
+      TG_BOT_TOKEN: $TG_BOT_TOKEN
+      SESSION_NAME: $SESSION_NAME
+      ENV: $ENV
+    resources:
+      cpu: 1000m
+      memory: 3Gi
