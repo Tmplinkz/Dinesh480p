@@ -87,7 +87,14 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     preset.append("veryfast")
     audio_b.append("40k")
     name.append("ANIME x UNIVERSE")
-    file_genertor_command = f"ffmpeg -hide_banner -loglevel quiet -progress '{progress}' -i '{video_file}' -metadata 'title=Encoded by @Anime4u_in' -c:v {codec[0]}  -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a libopus -b:a {audio_b[0]} -preset {preset[0]} -metadata:s:v 'title=Anime4u.in' -metadata:s:a 'title=Anime4u.in' -metadata:s:s 'title=Anime4u.in' -vf "drawtext=fontfile=font.ttf:fontsize={size[0]}:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text={name[0]}" '{out_put_file_name}' -y"
+    file_genertor_command = (
+    f"ffmpeg -hide_banner -loglevel quiet -progress '{progress}' -i '{video_file}' "
+    f"-metadata title={metadata[0]} -c:v {codec[0]} -map 0 -crf {crf[0]} -c:s copy "
+    f"-pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a {acodec[0]} -b:a {audio_b[0]} "
+    f"-preset {preset[0]} -metadata:s:a 'title={metadata1[0]}' -metadata:s:s 'title={metadata2[0]}' "
+    f'-vf "drawtext=fontfile=font.ttf:fontsize={size[0]}:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text={name[0]}" '
+    f"{out_put_file_name} -y"
+    )
  #Done !!
     COMPRESSION_START_TIME = time.time()
     process = await asyncio.create_subprocess_shell(
