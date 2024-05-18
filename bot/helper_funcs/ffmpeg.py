@@ -28,7 +28,7 @@ from bot import (
     audio_b,
     preset,
     codec,
-    watermark,
+    name,
     pid_list
 )
 
