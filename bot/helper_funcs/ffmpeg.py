@@ -94,7 +94,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     f"-metadata 'title=Encoded by ANIME x UNIVERSE' -c:v {codec[0]} -map 0 -crf {crf[0]} -c:s copy "
     f"-pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a libopus -b:a {audio_b[0]} "
     f"-preset {preset[0]} -metadata:s:a 'title= ANIME x UNIVERSE' -metadata:s:s 'title= ANIME x UNIVERSE' "
-    f"-vf "drawtext=fontfile=font.ttf:fontsize={size[0]}:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text={name[0]}:enable='between(t,0,5)'"
+    f"-vf "drawtext=fontfile=font.ttf:fontsize={size[0]}:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text={name[0]}:enable='between(t,0,5)' "
     f"{out_put_file_name} -y"
     )
  #Done !!
