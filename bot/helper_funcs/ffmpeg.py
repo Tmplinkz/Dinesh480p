@@ -91,7 +91,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     size.append("15")
     watermark_duration = 5
     watermark_position = "(main_w/2-text_w/2):(main_h-text_h-10)"
-    file_genertor_command = f"ffmpeg -hide_banner -loglevel quiet -progress '{progress}' -i '{video_file}' -metadata 'title=Encoded by @Anime4u_in' -c:v {codec[0]}  -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a libopus -b:a {audio_b[0]} -preset {preset[0]} -metadata:s:v 'title=Anime4u.in' -metadata:s:a 'title=Anime4u.in' -metadata:s:s 'title=Anime4u.in' -vf 'drawtext=fontfile=font.ttf:fontsize={size[0]}:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text={name[0]},fade=in:st=0:d={watermark_duration},fade=out:st=duration-d={watermark_duration},drawtext=fontfile=font.ttf:fontsize={size[0]}:fontcolor=white:text='{name[0]}':x={watermark_position}:y=main_h-text_h-10:enable='between(t,0,{watermark_duration})'\" '{out_put_file_name}' -y"
+    file_genertor_command = f"ffmpeg -hide_banner -loglevel quiet -progress '{progress}' -i '{video_file}' -metadata 'title=Encoded by @Anime4u_in' -c:v {codec[0]}  -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a libopus -b:a {audio_b[0]} -preset {preset[0]} -metadata:s:v 'title=Anime4u.in' -metadata:s:a 'title=Anime4u.in' -metadata:s:s 'title=Anime4u.in' -vf "drawtext=fontfile=font.ttf:fontsize={size[0]}:fontcolor=white:text={name[0]}:x=(w-tw)/2:y=h-th-10:box=0:boxcolor=white@0.0:textcolor=white,enable='between(t,0,10)'" '{out_put_file_name}' -y"
 #Done !!
     COMPRESSION_START_TIME = time.time()
     process = await asyncio.create_subprocess_shell(
